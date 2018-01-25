@@ -18,7 +18,6 @@ public class BanksLetters extends TestBase {
     driver.findElement(By.xpath("//div[text()='Сообщение для банка']")).click();
     driver.findElement(By.xpath("//button[text()='Сообщение для Банка']")).click();
     driver.findElement(By.xpath("//span[text()='Все']")).click();
-
     List<WebElement> user1 = driver.findElements(By.xpath("//div[@class='table__row']"));
     wait.until(ExpectedConditions.visibilityOfAllElements(user1));
 
@@ -26,11 +25,9 @@ public class BanksLetters extends TestBase {
     user.login("2222222222", "1111111111");
     //goToMyPP();
     driver.findElement(By.xpath("//div[text()='Создать ПП']")).click();
-
     driver.findElement(By.xpath("//div[text()='Сообщение для банка']")).click();
     driver.findElement(By.xpath("//button[text()='Сообщение для Банка']")).click();
     driver.findElement(By.xpath("//span[text()='Все']")).click();
-
     List<WebElement> user2 = driver.findElements(By.xpath("//div[@class='table__row']"));
     wait.until(ExpectedConditions.visibilityOfAllElements(user2));
     driver.quit();

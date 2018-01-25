@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends Page{
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[text()='Создать ПП']")
     private WebElement createNewPP;
 
     public void clickCreateNewPP(){

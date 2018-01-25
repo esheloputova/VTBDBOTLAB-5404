@@ -11,15 +11,21 @@ import static utils.pages.Page.getDriver;
 public class MySimpleTest {
 
 
-    @Before
-    public void setUp(){
-        getDriver().get(ConfigProperties.getTestProperty("url"));
-    }
-    @Test
-    public void loginTest(){
-        User user = new User("1111111111","1111111111");
-        new LoginPage()
-                .loginAs(user)
-                .clickCreateNewPP();
-    }
+  @Before
+  public void setUp() {
+    getDriver().get(ConfigProperties.getTestProperty("url"));
+  }
+
+  @Test
+  public void loginTest() {
+    User user = new User("1111111111", "1111111111");
+    new LoginPage()
+            .loginAs(user)
+             .clickCreateNewPP();
+  }
+
+ /* public void PpPage() {
+    new PpPage()
+            .ppPageAs();
+    }*/
 }
