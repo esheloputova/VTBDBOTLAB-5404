@@ -15,7 +15,7 @@ public abstract class Page {
     public Page() {
 
         PageFactory.initElements(getDriver(),  this);
-        //PageFactory.initElements(getAction(),this);
+       // PageFactory.initElements(getAction(),this);
 
     }
 
@@ -27,18 +27,18 @@ public abstract class Page {
         return driver;
     }
 
-    public WebDriverWait justWait() {
-        if (wait == null) {
+  /*  public WebDriverWait justWait() {
+        //if (wait == null) {
             wait = new WebDriverWait(driver, 10);
-        }
+        //}
         return wait;
     }
 
     public Actions doubleAction() {
-        if (action == null) {
+        //if (action == null) {
             action = new Actions(driver);
-        }
+        //}
         return action;
 
-    }
+    }*/
 }
