@@ -4,11 +4,9 @@ import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -54,7 +52,7 @@ public class TestBase {
 
   }
 
-  private void login(String login, String password) {
+  public void login(String login, String password) {
     login = ConfigProperties.getTestProperty("login1");
     password = ConfigProperties.getTestProperty("password1");
     driver.get(ConfigProperties.getTestProperty("url"));
@@ -67,7 +65,7 @@ public class TestBase {
     driver.findElement(By.xpath("//input[@type='password']")).click();
     driver.findElement(By.xpath("//input[@type='password']")).clear();
     driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
-    driver.findElement(By.cssSelector(".LoginView__btnPrimary--3LQGe[type='submit']")).click();
+    driver.findElement(By.xpath("//form[contains(@class,'LoginView__loginForm--10LxW')]//button[@type='submit' and text()='Войти']")).click();
   }
 
   public void goToMyPP() {
@@ -90,3 +88,4 @@ public class TestBase {
     driver = null;
   }
 }
+

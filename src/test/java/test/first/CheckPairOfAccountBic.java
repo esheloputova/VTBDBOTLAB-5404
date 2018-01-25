@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.ConfigProperties;
 
@@ -21,7 +20,7 @@ public class CheckPairOfAccountBic extends TestBase {
 
     driver.findElement(By.xpath("//div[@title='Расчетный счет получателя']/div[2]/input")).click();
     driver.findElement(By.xpath("//div[@class='field__clean']/i")).click();
-    driver.findElement(By.xpath("//div[@class='Button__labelClass--_0Dmv' and text()='Сохранить']")).click();
+    driver.findElement(By.xpath("//div[text()='Сохранить']")).click();
 
     WebElement warningAccount = driver.findElement(By.xpath("//div[@class=\"message\"]//div[@class='message__text']"));
     wait.until(ExpectedConditions.visibilityOf(warningAccount));
