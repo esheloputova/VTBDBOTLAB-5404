@@ -11,7 +11,7 @@ public class BanksLetters extends TestBase {
 
   @Test
   public void banksLettersTheFirstUser() {
-    User user = new User(driver);
+    User2 user = new User2(driver);
     user.login("1111111111", "1111111111");
     //goToMyPP();
     driver.findElement(By.xpath("//div[text()='Создать ПП']")).click();

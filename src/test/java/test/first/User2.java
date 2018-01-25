@@ -6,11 +6,11 @@ import utils.ConfigProperties;
 
 import java.util.concurrent.TimeUnit;
 
-public class User {
+public class User2 {
 
   public WebDriver driver;
 
-  public User(WebDriver driver) {
+  public User2(WebDriver driver) {
     this.driver=driver;
   }
 
