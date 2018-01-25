@@ -11,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import utils.ConfigProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -48,24 +47,7 @@ public class TestBase {
 
     driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); // неявные ожидания
     wait = new WebDriverWait(driver, 10);
-    login("login1", "password1");
 
-  }
-
-  public void login(String login, String password) {
-    login = ConfigProperties.getTestProperty("login1");
-    password = ConfigProperties.getTestProperty("password1");
-    driver.get(ConfigProperties.getTestProperty("url"));
-
-    driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-
-    driver.findElement(By.xpath("//input[@type='text']")).click();
-    driver.findElement(By.xpath("//input[@type='text']")).clear();
-    driver.findElement(By.xpath("//input[@type='text']")).sendKeys(login);
-    driver.findElement(By.xpath("//input[@type='password']")).click();
-    driver.findElement(By.xpath("//input[@type='password']")).clear();
-    driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
-    driver.findElement(By.xpath("//form[contains(@class,'LoginView__loginForm--10LxW')]//button[@type='submit' and text()='Войти']")).click();
   }
 
   public void goToMyPP() {
