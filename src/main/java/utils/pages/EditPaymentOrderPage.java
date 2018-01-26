@@ -14,7 +14,6 @@ public class EditPaymentOrderPage extends Page {
   String sucSaved = "Документ успешно сохранен";
   String messageForAccount = "Ключ счета получателя неверен. Должен быть 1";
   String messageAboutLengthAccount = "Длина значения поля счет получателя должна быть 20 символов";
-///sasasasas
 
   @FindBy(xpath = "//div[@title='Расчетный счет получателя']/div[2]/input")
   private WebElement accountOFrecipient;
