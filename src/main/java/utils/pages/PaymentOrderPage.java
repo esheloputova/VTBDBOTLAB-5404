@@ -6,16 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GoToMyPaymentOrderPage extends Page {
+public class PaymentOrderPage extends Page {
 
   @FindBy(xpath = "//div[contains(@class,'table__row')]//div[text()='Elena']")
-  private WebElement myPp;
+  private WebElement myPaymentOrder;
 
 
   public void ppPageMy() {
-    new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(myPp));
-    myPp.click();
-    new Actions(driver).doubleClick(myPp).build().perform();
+    new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(myPaymentOrder));
+    myPaymentOrder.click();
+    new Actions(driver).doubleClick(myPaymentOrder).build().perform();
 
 
 
