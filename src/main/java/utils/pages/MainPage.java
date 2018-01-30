@@ -18,8 +18,9 @@ public class MainPage extends Page {
     createNewPP.click();
   }
 
-  public  void clickPP() {
+  public  PaymentOrderPage clickPP() {
     new WebDriverWait(getDriver(),7).until(ExpectedConditions.visibilityOf(ppPage));
     ppPage.click();
+    return new PaymentOrderPage();
   }
 }

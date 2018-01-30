@@ -12,13 +12,11 @@ public class PaymentOrderPage extends Page {
   private WebElement myPaymentOrder;
 
 
-  public void ppPageMy() {
+  public EditPaymentOrderPage ppPageMy() {
     new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(myPaymentOrder));
     myPaymentOrder.click();
     new Actions(driver).doubleClick(myPaymentOrder).build().perform();
-
-
-
+    return new EditPaymentOrderPage();
   }
 
 }

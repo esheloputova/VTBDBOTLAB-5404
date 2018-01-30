@@ -28,6 +28,7 @@ public class BanksLetters {
     new LoginPage()
             .loginAs(user1);
     List<WebElement> webElements1 = new BanksLetterPage().createListBanksLetters();
+    String webElements11 = webElements1.toString();
 
 
     setUp();
@@ -35,8 +36,10 @@ public class BanksLetters {
     new LoginPage()
             .loginAs(user2);
     List<WebElement> webElements2 = new BanksLetterPage().createListBanksLetters();
+    String webElements22 = webElements2.toString();
 
-    if (webElements1.equals(webElements2)) {
+
+    if (webElements11.equals(webElements22)) {
       logger.info("Списки равны!");
     } else {
       logger.info("Списки не равны!");
