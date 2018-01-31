@@ -35,8 +35,8 @@ public class BanksLetters {
 
 //    String str = webElements1.stream().map(WebElement::getText).collect(Collectors.joining(";"));
 
-        StringBuilder builder1 = new StringBuilder();
-    for (WebElement element: webElements1) {
+    StringBuilder builder1 = new StringBuilder();
+    for (WebElement element : webElements1) {
       builder1.append(element.getText()).append(";");
     }
     String str1 = builder1.toString();
@@ -49,7 +49,7 @@ public class BanksLetters {
     new NewPPPage().clickOnPageLetter();
     List<WebElement> webElements2 = new BanksLetterPage().createListBanksLetters();
     StringBuilder builder2 = new StringBuilder();
-    for (WebElement element: webElements2) {
+    for (WebElement element : webElements2) {
       builder2.append(element.getText()).append(";");
     }
     String str2 = builder2.toString();
