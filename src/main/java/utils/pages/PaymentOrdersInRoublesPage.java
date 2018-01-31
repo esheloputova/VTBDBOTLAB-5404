@@ -6,11 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PaymentOrderPage extends Page {
+public class PaymentOrdersInRoublesPage extends Page {
+  @FindBy(xpath = "//div[contains(@id, 'root')]//div[text()='Платежные поручения']")
+  private WebElement scrollerPP;
 
   @FindBy(xpath = "//div[contains(@class,'table__row')]//div[text()='Elena']")
   private WebElement myPaymentOrder;
-
 
   public EditPaymentOrderPage ppPageMy() {
     new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(myPaymentOrder));
@@ -20,3 +21,5 @@ public class PaymentOrderPage extends Page {
   }
 
 }
+
+

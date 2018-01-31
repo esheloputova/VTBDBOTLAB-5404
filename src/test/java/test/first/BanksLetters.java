@@ -9,6 +9,8 @@ import utils.ConfigProperties;
 import utils.model.User;
 import utils.pages.BanksLetterPage;
 import utils.pages.LoginPage;
+import utils.pages.MainPage;
+import utils.pages.NewPPPage;
 
 import java.util.List;
 
@@ -27,19 +29,33 @@ public class BanksLetters {
     User user1 = new User("1111111111", "1111111111");
     new LoginPage()
             .loginAs(user1);
+    new MainPage().clickCreateNewPP();
+    new NewPPPage().clickOnPageLetter();
     List<WebElement> webElements1 = new BanksLetterPage().createListBanksLetters();
-    String webElements11 = webElements1.toString();
 
+//    String str = webElements1.stream().map(WebElement::getText).collect(Collectors.joining(";"));
+
+        StringBuilder builder1 = new StringBuilder();
+    for (WebElement element: webElements1) {
+      builder1.append(element.getText()).append(";");
+    }
+    String str1 = builder1.toString();
 
     setUp();
     User user2 = new User("2222222222", "1111111111");
     new LoginPage()
             .loginAs(user2);
+    new MainPage().clickCreateNewPP();
+    new NewPPPage().clickOnPageLetter();
     List<WebElement> webElements2 = new BanksLetterPage().createListBanksLetters();
-    String webElements22 = webElements2.toString();
+    StringBuilder builder2 = new StringBuilder();
+    for (WebElement element: webElements2) {
+      builder2.append(element.getText()).append(";");
+    }
+    String str2 = builder2.toString();
 
 
-    if (webElements11.equals(webElements22)) {
+    if (str1.equals(str2)) {
       logger.info("Списки равны!");
     } else {
       logger.info("Списки не равны!");

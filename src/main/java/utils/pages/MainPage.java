@@ -13,14 +13,16 @@ public class MainPage extends Page {
   @FindBy(linkText = "Расчеты в рублях")
   private WebElement ppPage;
 
-  public void clickCreateNewPP() {
+  public NewPPPage clickCreateNewPP() {
     new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(createNewPP));
     createNewPP.click();
+    return new NewPPPage();
+
   }
 
-  public  PaymentOrderPage clickPP() {
+  public PaymentOrdersInRoublesPage clickPP() {
     new WebDriverWait(getDriver(),7).until(ExpectedConditions.visibilityOf(ppPage));
     ppPage.click();
-    return new PaymentOrderPage();
+    return new PaymentOrdersInRoublesPage();
   }
 }

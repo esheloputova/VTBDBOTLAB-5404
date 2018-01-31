@@ -8,8 +8,8 @@ import utils.model.Account;
 import utils.model.Bic;
 import utils.model.User;
 import utils.pages.EditPaymentOrderPage;
-import utils.pages.PaymentOrderPage;
 import utils.pages.LoginPage;
+import utils.pages.PaymentOrdersInRoublesPage;
 
 import static utils.pages.Page.getDriver;
 
@@ -27,7 +27,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .clearAccountField();
@@ -41,7 +41,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .successfulSave(account, bic);
@@ -55,7 +55,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .incorrectPairsAccountBic(account);
@@ -68,7 +68,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .enterAccountMorePossible(account);
@@ -81,7 +81,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .enterAccountLessPossible(account);
@@ -94,7 +94,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .enterLettersInAccount(account);
@@ -107,7 +107,7 @@ public class CheckPairOfAccountBic {
     new LoginPage()
             .loginAs(user)
             .clickPP();
-    new PaymentOrderPage()
+    new PaymentOrdersInRoublesPage()
             .ppPageMy();
     new EditPaymentOrderPage()
             .enterCharactersInAccount(account);
