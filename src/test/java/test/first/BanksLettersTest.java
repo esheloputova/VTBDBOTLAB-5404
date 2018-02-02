@@ -5,6 +5,8 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
+import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.User;
 import utils.pages.BanksLetterPage;
@@ -24,7 +26,9 @@ public class BanksLettersTest {
     getDriver().get(ConfigProperties.getTestProperty("url"));
   }
 
-  @Test
+
+   @Test
+   @Step("Авторизация первым юзером")
   public void compareTwoListsBanksLettersTest() {
     User user1 = new User("1111111111", "1111111111");
     new LoginPage()
