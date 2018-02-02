@@ -13,7 +13,7 @@ import utils.pages.PaymentOrdersInRoublesPage;
 
 import static utils.pages.Page.getDriver;
 
-public class CheckPairOfAccountBic {
+public class CheckPairOfAccountBicTest {
 
 
   @Before

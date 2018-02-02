@@ -16,8 +16,8 @@ import java.util.List;
 
 import static utils.pages.Page.getDriver;
 
-public class BanksLetters {
-  final static Logger logger = Logger.getLogger(BanksLetters.class);
+public class BanksLettersTest {
+  final static Logger logger = Logger.getLogger(BanksLettersTest.class);
 
   @Before
   public void setUp() {
