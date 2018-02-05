@@ -1,10 +1,11 @@
 package firsts;
 
 import org.apache.log4j.Logger;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
+import ru.yandex.qatools.allure.annotations.Step;
+import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.User;
 import utils.pages.BanksLetterPage;
@@ -12,11 +13,11 @@ import utils.pages.LoginPage;
 import utils.pages.MainPage;
 import utils.pages.NewPPPage;
 
-import java.io.IOException;
 import java.util.List;
 
 import static utils.pages.Page.getDriver;
 
+@Title("Сравнение 2х списков Сообщений для банка")
 public class BanksLettersTest {
   final static Logger logger = Logger.getLogger(BanksLettersTest.class);
 
@@ -64,10 +65,10 @@ public class BanksLettersTest {
     }
   }
 
-  @AfterClass
-  public static void stop() {
-    getDriver().quit();
-  }
+//  @AfterClass
+//  public static void stop() {
+//    getDriver().quit();
+//  }
 
 
 }
