@@ -1,12 +1,10 @@
-package test.first;
+package firsts;
 
 import org.apache.log4j.Logger;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import ru.yandex.qatools.allure.annotations.Step;
-import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.User;
 import utils.pages.BanksLetterPage;
@@ -14,6 +12,7 @@ import utils.pages.LoginPage;
 import utils.pages.MainPage;
 import utils.pages.NewPPPage;
 
+import java.io.IOException;
 import java.util.List;
 
 import static utils.pages.Page.getDriver;
@@ -28,8 +27,7 @@ public class BanksLettersTest {
 
 
    @Test
-   @Step("Авторизация первым юзером")
-  public void compareTwoListsBanksLettersTest() {
+   public void compareTwoListsBanksLettersTest() {
     User user1 = new User("1111111111", "1111111111");
     new LoginPage()
             .loginAs(user1);

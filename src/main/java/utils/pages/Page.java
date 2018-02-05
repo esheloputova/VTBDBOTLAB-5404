@@ -1,8 +1,6 @@
 package utils.pages;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -22,6 +20,7 @@ public abstract class Page {
 
   public static WebDriver getDriver() {
     if (driver == null) {
+      System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
       driver = new ChromeDriver();
     }
     return driver;

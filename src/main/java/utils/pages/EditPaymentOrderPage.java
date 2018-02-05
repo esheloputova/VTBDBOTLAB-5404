@@ -2,6 +2,7 @@ package utils.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,27 +17,35 @@ public class EditPaymentOrderPage extends Page {
   String messageAboutLengthAccount = "Длина значения поля счет получателя должна быть 20 символов";
 
   @FindBy(xpath = "//div[@title='Расчетный счет получателя']/div[2]/input")
+  @CacheLookup
   private WebElement accountOFrecipient;
 
   @FindBy(xpath = "//div[@class='field__clean']/i")
+  @CacheLookup
   private WebElement accountCleaning;
 
   @FindBy(xpath = "//div[text()='Сохранить']")
+  @CacheLookup
   private WebElement saveButton;
 
   @FindBy(xpath = "//div[@class='message']//div[@class='message__text']")
+  @CacheLookup
   private WebElement warningAccount;
 
   @FindBy(xpath = "//div[@title='БИК']/div[2]/div[1]/input")
+  @CacheLookup
   private WebElement bicBankOfrecipient;
 
   @FindBy(xpath = "//div[@class='PushItem__text--14a_h' and text()='Документ успешно сохранен']")
+  @CacheLookup
   private WebElement successfulSaved;
 
   @FindBy(xpath = "//div[@title='Расчетный счет получателя']//div[@class='field__tooltip field__tooltip_error']")
+  @CacheLookup
   private WebElement messageAccount;
 
   @FindBy(xpath = "//div[@class=\"field__tooltip field__tooltip_error\"]")
+  @CacheLookup
   private WebElement account19;
 
 
@@ -47,6 +56,7 @@ public class EditPaymentOrderPage extends Page {
     saveButton.click();
     new WebDriverWait(getDriver(), 7).until(ExpectedConditions.visibilityOf(warningAccount));
     warningAccount.click();
+    new WebDriverWait(getDriver(),10).until(ExpectedConditions.visibilityOf(warningAccount));
     Assert.assertTrue("Сообщения при сохранении ПП без счета не совпадают", warningAccount.getText().equals(noaccount));
   }
 

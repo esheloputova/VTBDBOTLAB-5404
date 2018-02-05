@@ -1,8 +1,11 @@
-package test.first;
+package firsts;
 
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.Account;
 import utils.model.Bic;
@@ -13,14 +16,16 @@ import utils.pages.PaymentOrdersInRoublesPage;
 
 import static utils.pages.Page.getDriver;
 
+@Title("Разные проверки поля Счет")
 public class CheckPairOfAccountBicTest {
-
+  public WebDriver driver;
 
   @Before
   public void setUp() {
     getDriver().get(ConfigProperties.getTestProperty("url"));
   }
 
+  @Title("Сохранение ПП без счета")
   @Test
   public void clearAccountFieldTest() {
     User user = new User("1111111111", "1111111111");
@@ -31,8 +36,9 @@ public class CheckPairOfAccountBicTest {
             .ppPageMy();
     new EditPaymentOrderPage()
             .clearAccountField();
-  }
+      }
 
+  @Title("Cохранение ПП с корректным набором счет + бик")
   @Test
   public void successfulSaveTest() {
     User user = new User("1111111111", "1111111111");
@@ -47,6 +53,7 @@ public class CheckPairOfAccountBicTest {
             .successfulSave(account, bic);
   }
 
+  @Title("Cохранение ПП с корректным набором счет + бик")
   @Test
   public void incorrectPairsAccountBicTest() {
     User user = new User("1111111111", "1111111111");
@@ -61,6 +68,7 @@ public class CheckPairOfAccountBicTest {
             .incorrectPairsAccountBic(account);
   }
 
+  @Title("Вводим в поле счет больше 20 символов")
   @Test
   public void enterAccountMorePossibleTest() {
     User user = new User("1111111111", "1111111111");
@@ -74,6 +82,7 @@ public class CheckPairOfAccountBicTest {
             .enterAccountMorePossible(account);
   }
 
+  @Title("Вводим в поле счет буквы")
   @Test
   public void enterAccountLesPossibleTest() {
     User user = new User("1111111111", "1111111111");
@@ -87,6 +96,7 @@ public class CheckPairOfAccountBicTest {
             .enterAccountLessPossible(account);
   }
 
+  @Title("Вводим в поле счет меньше 20 символов")
   @Test
   public void enterLettersInAccountTest() {
     User user = new User("1111111111", "1111111111");
@@ -100,6 +110,7 @@ public class CheckPairOfAccountBicTest {
             .enterLettersInAccount(account);
   }
 
+  @Title("Вводим в поле счет спецсимволы")
   @Test
   public void enterCharactersInAccountTest() {
     User user = new User("1111111111", "1111111111");
@@ -113,9 +124,11 @@ public class CheckPairOfAccountBicTest {
             .enterCharactersInAccount(account);
   }
 
-  @AfterClass
-  public static void stop() {
-    getDriver().quit();
+
+
+  @After
+  public void updatePage() {
+    driver = null;
   }
 
 
