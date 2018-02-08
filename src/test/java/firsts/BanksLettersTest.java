@@ -2,6 +2,7 @@ package firsts;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Title;
@@ -12,6 +13,8 @@ import utils.pages.LoginPage;
 import utils.pages.MainPage;
 import utils.pages.NewPPPage;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import static utils.pages.Page.getDriver;
@@ -23,8 +26,17 @@ public class BanksLettersTest {
 
   @BeforeClass
   public void setUp() {
+
+//    URL hostURL = null;
+//    try {
+//      hostURL = new URL(" http://192.168.1.42:5555/wd/hub");
+//    } catch (MalformedURLException e) {
+//      e.printStackTrace();
+//    }
+
     getDriver().get(ConfigProperties.getTestProperty("url"));
   }
+
 
 
    @Test
@@ -65,10 +77,10 @@ public class BanksLettersTest {
     }
   }
 
-//  @AfterClass
-//  public static void stop() {
-//    getDriver().quit();
-//  }
+  @AfterClass
+  public static void stop() {
+    getDriver().quit();
+  }
 
 
 }

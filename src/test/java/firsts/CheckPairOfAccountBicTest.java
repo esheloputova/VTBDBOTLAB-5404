@@ -4,7 +4,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import ru.yandex.qatools.allure.annotations.Step;
 import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.Account;
@@ -18,15 +17,14 @@ import static utils.pages.Page.getDriver;
 
 @Title("Разные проверки поля Счет")
 public class CheckPairOfAccountBicTest {
-  //public WebDriver driver;
+
 
  // @Parameters({"browserName", "browserVersion"})
   @BeforeClass
   public void setUp() {
-     getDriver().get(ConfigProperties.getTestProperty("url"));
+       getDriver().get(ConfigProperties.getTestProperty("url"));
 
   }
-
 
     @Title("Сохранение ПП без счета")
     @Test
@@ -134,10 +132,10 @@ public class CheckPairOfAccountBicTest {
     getDriver().navigate().refresh();
   }
 
-//  @AfterSuite
-//  public static void stop() {
-//    getDriver().quit();
-//  }
+  @AfterSuite
+  public static void stop() {
+    getDriver().quit();
+  }
 }
 
 
