@@ -11,6 +11,7 @@ public abstract class Page {
   protected WebDriverWait wait;
   protected Actions action;
 
+
   public Page() {
 
     PageFactory.initElements(getDriver(), this);

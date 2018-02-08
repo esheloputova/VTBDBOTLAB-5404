@@ -1,10 +1,9 @@
 package firsts;
 
 import org.apache.log4j.Logger;
-import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebElement;
-import ru.yandex.qatools.allure.annotations.Step;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.User;
@@ -21,7 +20,8 @@ import static utils.pages.Page.getDriver;
 public class BanksLettersTest {
   final static Logger logger = Logger.getLogger(BanksLettersTest.class);
 
-  @Before
+
+  @BeforeClass
   public void setUp() {
     getDriver().get(ConfigProperties.getTestProperty("url"));
   }

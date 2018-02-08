@@ -1,0 +1,50 @@
+{
+  "capabilities":
+  [
+    {
+      "browserName": "chrome",
+      "platform": "WINDOWS",
+      "maxInstances": 13,
+      "seleniumProtocol": "WebDriver",
+      "nodeName": "simpleNode"
+    },
+    {
+      "seleniumProtocol": "WebDriver",
+      "browserName": "internet explorer",
+      "version": "8",
+      "maxInstances": 13,
+      "platform" : "WINDOWS",
+      "nodeName": "simpleNode"
+    },
+    {
+      "browserName": "firefox",
+      "version": "22",
+      "platform": "WINDOWS",
+      "firefox_binary":"FirefoxExe/ff22/firefox.exe",
+      "maxInstances": 25,
+      "seleniumProtocol": "WebDriver",
+      "nodeName": "simpleNode"
+    },
+    {
+      "browserName": "firefox",
+      "version": "24",
+      "platform": "WINDOWS",
+      "maxInstances": 25,
+      "firefox_binary":"FirefoxExe/ff24/firefox.exe",
+      "seleniumProtocol": "WebDriver",
+      "nodeName": "simpleNode"
+    }
+  ],
+  "configuration":
+  {
+    "nodeTimeout":120,
+    "nodePolling":2000,
+    "registerCycle":10000,
+    "register":true,
+    "cleanUpCycle":2000,
+    "timeout":30000,
+    "maxSession":25,
+    "nodeStatusCheckTimeout":10000,
+    "downPollingLimit":360000
+  }
+}
