@@ -1,9 +1,6 @@
 package firsts;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.Account;
@@ -20,7 +17,8 @@ public class CheckPairOfAccountBicTest {
 
 
  // @Parameters({"browserName", "browserVersion"})
-  @BeforeClass
+
+  @BeforeMethod
   public void setUp() {
        getDriver().get(ConfigProperties.getTestProperty("url"));
 
@@ -127,7 +125,7 @@ public class CheckPairOfAccountBicTest {
   }
 
 
-  @AfterClass
+  @AfterMethod
   public void updatePage() {
     getDriver().navigate().refresh();
   }

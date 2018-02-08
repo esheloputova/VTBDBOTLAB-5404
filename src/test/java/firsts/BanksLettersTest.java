@@ -26,15 +26,7 @@ public class BanksLettersTest {
 
   @BeforeClass
   public void setUp() {
-
-//    URL hostURL = null;
-//    try {
-//      hostURL = new URL(" http://192.168.1.42:5555/wd/hub");
-//    } catch (MalformedURLException e) {
-//      e.printStackTrace();
-//    }
-
-    getDriver().get(ConfigProperties.getTestProperty("url"));
+     getDriver().get(ConfigProperties.getTestProperty("url"));
   }
 
 

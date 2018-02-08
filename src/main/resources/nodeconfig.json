@@ -1,50 +1,31 @@
 {
-  "capabilities":
-  [
+  "capabilities": [
     {
       "browserName": "chrome",
-      "platform": "WINDOWS",
-      "maxInstances": 13,
-      "seleniumProtocol": "WebDriver",
-      "nodeName": "simpleNode"
+      "maxInstances": 5
     },
     {
-      "seleniumProtocol": "WebDriver",
+      "browserName": "firefox",
+      "maxInstances": 5
+    },
+    {
       "browserName": "internet explorer",
-      "version": "8",
-      "maxInstances": 13,
-      "platform" : "WINDOWS",
-      "nodeName": "simpleNode"
-    },
-    {
-      "browserName": "firefox",
-      "version": "22",
-      "platform": "WINDOWS",
-      "firefox_binary":"FirefoxExe/ff22/firefox.exe",
-      "maxInstances": 25,
-      "seleniumProtocol": "WebDriver",
-      "nodeName": "simpleNode"
-    },
-    {
-      "browserName": "firefox",
-      "version": "24",
-      "platform": "WINDOWS",
-      "maxInstances": 25,
-      "firefox_binary":"FirefoxExe/ff24/firefox.exe",
-      "seleniumProtocol": "WebDriver",
-      "nodeName": "simpleNode"
+      "maxInstances": 5
     }
   ],
-  "configuration":
-  {
-    "nodeTimeout":120,
-    "nodePolling":2000,
-    "registerCycle":10000,
-    "register":true,
-    "cleanUpCycle":2000,
-    "timeout":30000,
-    "maxSession":25,
-    "nodeStatusCheckTimeout":10000,
-    "downPollingLimit":360000
-  }
+  "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
+  "maxSession": 5,
+  "port": 5555,
+  "register": true,
+  "registerCycle": 5000,
+  "hub": "http://localhost:4444",
+  "nodeStatusCheckTimeout": 5000,
+  "nodePolling": 5000,
+  "role": "node",
+  "unregisterIfStillDownAfter": 60000,
+  "downPollingLimit": 2,
+  "debug": false,
+  "servlets" : [],
+  "withoutServlets": [],
+  "custom": {}
 }
