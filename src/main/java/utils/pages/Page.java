@@ -1,6 +1,5 @@
 package utils.pages;
 
-import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -33,24 +32,13 @@ public abstract class Page {
       //  System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 //      driver = new ChromeDriver();
 
-//      DesiredCapabilities capability = DesiredCapabilities.chrome();
-//      capability.setBrowserName("chrome");
-//      capability.setPlatform(Platform.WIN10);
-//      URL hostURL = null;
-//      try {
-//        hostURL = new URL(" http://192.168.1.42:5555/wd/hub");
-//      } catch (MalformedURLException e) {
-//        e.printStackTrace();
-//      }
-//      driver = new RemoteWebDriver(hostURL, capability);
-//    }
-
       DesiredCapabilities caps = new DesiredCapabilities();
-      Properties property = new Properties();
-      property.setProperty("browser", toLowerCase(setProperty("browser", System.getProperty("browser"))));
-      if ((property.getProperty("browser").equals("firefox") || property.getProperty("browser").equals("chrome")) || property.getProperty("browser").equals("internet explorer")||property.getProperty("browser").equals("chrome"))
-      caps.setBrowserName(property.getProperty("browser"));
-      //else caps.setBrowserName("chrome");
+      //Properties property = new Properties();
+      String browserName = System.getProperty("browser", "");
+      setProperty("browser", toLowerCase(setProperty("browser", browserName)));
+      if (browserName.equals("firefox") || browserName.equals("chrome") || browserName.equals("internet explorer"))
+        caps.setBrowserName(browserName);
+      else  caps.setBrowserName("chrome");
 
       URL hostURL = null;
       try {

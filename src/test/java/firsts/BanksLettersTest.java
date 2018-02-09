@@ -13,8 +13,6 @@ import utils.pages.LoginPage;
 import utils.pages.MainPage;
 import utils.pages.NewPPPage;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 import static utils.pages.Page.getDriver;
