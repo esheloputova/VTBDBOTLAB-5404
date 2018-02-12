@@ -16,17 +16,17 @@ import static utils.pages.Page.getDriver;
 public class CheckPairOfAccountBicTest {
 
 
- // @Parameters({"browserName", "browserVersion"})
+  // @Parameters({"browserName", "browserVersion"})
 
   @BeforeMethod
   public void setUp() {
-       getDriver().get(ConfigProperties.getTestProperty("url"));
+    getDriver().get(ConfigProperties.getTestProperty("url"));
 
   }
 
-    @Title("Сохранение ПП без счета")
-    @Test
-      public void clearAccountFieldTest() {
+  @Title("Сохранение ПП без счета")
+  @Test
+  public void clearAccountFieldTest() {
     User user = new User("1111111111", "1111111111");
     new LoginPage()
             .loginAs(user)

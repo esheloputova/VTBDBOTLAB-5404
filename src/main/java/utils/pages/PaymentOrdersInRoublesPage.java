@@ -10,7 +10,7 @@ public class PaymentOrdersInRoublesPage extends Page {
   @FindBy(xpath = "//div[contains(@id, 'root')]//div[text()='Платежные поручения']")
   private WebElement scrollerPP;
 
-  @FindBy(xpath = "//div[contains(@class,'table__row')]//div[text()='Elenaaaaaaaaa']")
+  @FindBy(xpath = "//div[contains(@class,'table__row')]//div[text()='Elenaaaaaaaaaaaaaaa']")
   private WebElement myPaymentOrder;
 
   public EditPaymentOrderPage ppPageMy() {

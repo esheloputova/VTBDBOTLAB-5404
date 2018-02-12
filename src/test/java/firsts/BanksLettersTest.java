@@ -2,9 +2,7 @@ package firsts;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import ru.yandex.qatools.allure.annotations.Title;
 import utils.ConfigProperties;
 import utils.model.User;
@@ -17,20 +15,20 @@ import java.util.List;
 
 import static utils.pages.Page.getDriver;
 
+
 @Title("Сравнение 2х списков Сообщений для банка")
 public class BanksLettersTest {
   final static Logger logger = Logger.getLogger(BanksLettersTest.class);
 
 
-  @BeforeClass
+  @BeforeMethod
   public void setUp() {
-     getDriver().get(ConfigProperties.getTestProperty("url"));
+    getDriver().get(ConfigProperties.getTestProperty("url"));
   }
 
 
-
-   @Test
-   public void compareTwoListsBanksLettersTest() {
+  @Test
+  public void compareTwoListsBanksLettersTest() {
     User user1 = new User("1111111111", "1111111111");
     new LoginPage()
             .loginAs(user1);
@@ -45,7 +43,7 @@ public class BanksLettersTest {
       builder1.append(element.getText()).append(";");
     }
     String str1 = builder1.toString();
-
+    //getDriver().navigate().refresh();
     setUp();
     User user2 = new User("2222222222", "1111111111");
     new LoginPage()
@@ -67,7 +65,7 @@ public class BanksLettersTest {
     }
   }
 
-  @AfterClass
+  @AfterMethod
   public static void stop() {
     getDriver().quit();
   }
